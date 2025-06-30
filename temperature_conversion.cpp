@@ -13,8 +13,9 @@ int main()
     std::cout << "C = Celsius" << '\n';
     do{std::cout << "What unit would you like to convert to?: " << '\n';
     std::cin >> unit;
+    unit = toupper(unit);
 
-    if(unit == 'F' || unit == 'f'){
+    if(unit == 'F'){
         std::cout << "Enter the temperature in Celsius: " << '\n';
         std::cin >> temp;
 
@@ -22,8 +23,9 @@ int main()
         std::cout << "The temperature is " << temp << " degrees Fahrenheit." << '\n';
         std::cout << "Would you like to continue?(Y/N): " << '\n';
         std::cin >> cont;
+        cont = toupper(cont);
     }
-    else if(unit == 'C' || unit == 'c'){
+    else if(unit == 'C'){
         std::cout << "Enter the temperature in Fahrenheit: " << '\n';
         std::cin >> temp;
 
@@ -32,12 +34,14 @@ int main()
         std::cout << "The temperature is " << temp << " degrees Celsius." << '\n';
         std::cout << "Would you like to continue?(Y/N): " << '\n';
         std::cin >> cont;
+        cont = toupper(cont);
     }
     else{
         std::cout << "Invalid response. Please select either Fahrenheit(F) or Celsius(C)." << '\n';
         std::cout << "Would you like to continue?(Y/N): " << '\n';
         std::cin >> cont;
-    }}while(cont == 'Y' || cont == 'y');
+        cont = toupper(cont);
+    }}while(cont == 'Y');
 
     std::cout << "***********************************" << '\n';
 
